@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.resmory_flutter">
+    package="com.blackbear.resmory">
    <application
         android:label="resmory_flutter"
         android:name="${applicationName}"

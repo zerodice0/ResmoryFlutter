@@ -1,4 +1,4 @@
-package com.example.resmory_flutter
+package com.blackbear.resmory
 
 import io.flutter.embedding.android.FlutterActivity
 
