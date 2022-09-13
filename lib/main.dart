@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'package:resmory_flutter/view/login/login.dart';
+import 'package:get/get.dart';
+import 'view/login/login.dart';
 import 'firebase_options.dart';
+import 'view/signup/signup.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -24,8 +26,12 @@ class ResMory extends StatefulWidget {
 class _ResMoryState extends State<ResMory> {
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: Login(),
+    return GetMaterialApp(
+      routes: {
+        Login.routeName: (context) => const Login(),
+        SignUp.routeName: (context) => const SignUp()
+      },
+      initialRoute: Login.routeName,
     );
   }
 }
