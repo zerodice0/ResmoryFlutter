@@ -3,6 +3,7 @@
 import 'package:firebase_core/firebase_core.dart' show FirebaseOptions;
 import 'package:flutter/foundation.dart'
     show defaultTargetPlatform, kIsWeb, TargetPlatform;
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 /// Default [FirebaseOptions] for use with your Firebase apps.
 ///
@@ -43,40 +44,40 @@ class DefaultFirebaseOptions {
     }
   }
 
-  static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyAkmTVOgSDsHhzQHVtJtDHfPercc9locis',
-    appId: '1:312772265280:web:9d304928fc5ccb2eeaa6a5',
-    messagingSenderId: '312772265280',
-    projectId: 'resmory',
-    authDomain: 'resmory.firebaseapp.com',
-    storageBucket: 'resmory.appspot.com',
+  static FirebaseOptions web = FirebaseOptions(
+    apiKey: dotenv.get("API_KEY_WEB"),
+    appId: dotenv.get("API_ID_WEB"),
+    messagingSenderId: dotenv.get("MESSAGING_SENDER_ID"),
+    projectId: dotenv.get("PROJECT_ID"),
+    authDomain: dotenv.get("AUTH_DOMAIN"),
+    storageBucket: dotenv.get("STORAGE_BUCKET"),
   );
 
-  static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyC76vvyC8cBoXVr6CQY62Z62HJ6V-ve3nU',
-    appId: '1:312772265280:android:e6229e333e98e77aeaa6a5',
-    messagingSenderId: '312772265280',
-    projectId: 'resmory',
-    storageBucket: 'resmory.appspot.com',
+  static FirebaseOptions android = FirebaseOptions(
+    apiKey: dotenv.get("API_KEY_ANDROID"),
+    appId: dotenv.get("APP_ID_ANDROID"),
+    messagingSenderId: dotenv.get("MESSAGING_SENDER_ID"),
+    projectId: dotenv.get("PROJECT_ID"),
+    storageBucket: dotenv.get("STORAGE_BUCKET"),
   );
 
-  static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyBBEo9QU-7qtguQbGJfEFu9k-EJGYruuMo',
-    appId: '1:312772265280:ios:57c126efa5c92db6eaa6a5',
-    messagingSenderId: '312772265280',
-    projectId: 'resmory',
-    storageBucket: 'resmory.appspot.com',
-    iosClientId: '312772265280-dpf6lgu5t0ivs2i6mi9srngd0263g79v.apps.googleusercontent.com',
-    iosBundleId: 'com.blackbear.resmory',
+  static FirebaseOptions ios = FirebaseOptions(
+    apiKey: dotenv.get("API_KEY_IOS"),
+    appId: dotenv.get("APP_ID_IOS"),
+    messagingSenderId: dotenv.get("MESSAGING_SENDER_ID"),
+    projectId: dotenv.get("PROJECT_ID"),
+    storageBucket: dotenv.get("STORAGE_BUCKET"),
+    iosClientId: dotenv.get("CLIENT_ID_IOS"),
+    iosBundleId: dotenv.get("BUNDLE_ID_IOS"),
   );
 
-  static const FirebaseOptions macos = FirebaseOptions(
-    apiKey: 'AIzaSyBBEo9QU-7qtguQbGJfEFu9k-EJGYruuMo',
-    appId: '1:312772265280:ios:57c126efa5c92db6eaa6a5',
-    messagingSenderId: '312772265280',
-    projectId: 'resmory',
-    storageBucket: 'resmory.appspot.com',
-    iosClientId: '312772265280-dpf6lgu5t0ivs2i6mi9srngd0263g79v.apps.googleusercontent.com',
-    iosBundleId: 'com.blackbear.resmory',
+  static FirebaseOptions macos = FirebaseOptions(
+    apiKey: dotenv.get("API_KEY_IOS"),
+    appId: dotenv.get("API_ID_IOS"),
+    messagingSenderId: dotenv.get("MESSAGING_SENDER_ID"),
+    projectId: dotenv.get("PROJECT_ID"),
+    storageBucket: dotenv.get("STORAGE_BUCKET"),
+    iosClientId: dotenv.get("CLINET_ID_IOS"),
+    iosBundleId: dotenv.get("BUNDLE_ID_IOS"),
   );
 }
