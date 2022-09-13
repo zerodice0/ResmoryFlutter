@@ -1,12 +1,16 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:provider/provider.dart';
 import 'package:resmory_flutter/components/text/headline.dart';
-import 'package:resmory_flutter/view/login/login_view_model.dart';
+import '../signup/signup.dart';
+import 'view_model.dart';
 
 import '../../components/roundedCard/rounded_card.dart';
 
 class Login extends StatelessWidget {
+  static const String routeName = "Login";
+
   const Login({Key? key}) : super(key: key);
 
   @override
@@ -36,14 +40,14 @@ class _View extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
                 const Headline(
-                  text: 'ResMory',
+                  text: 'Login',
                   headlineLevel: 3,
                 ),
-                const SizedBox(height: 10),
-                const Headline(
-                  text: 'Share your memories about restaurants',
-                  headlineLevel: 6,
-                ),
+                // const SizedBox(height: 10),
+                // const Headline(
+                //   text: 'Share your memories about restaurants',
+                //   headlineLevel: 6,
+                // ),
                 const SizedBox(height: 20),
                 CupertinoTextField(
                   placeholder: "Email Address",
@@ -57,10 +61,19 @@ class _View extends StatelessWidget {
                   controller: viewModel.passwordController,
                 ),
                 const SizedBox(height: 20),
-                TextButton(
-                  onPressed: viewModel.loginToFirebase,
-                  child: const Text("Login"),
-                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    TextButton(
+                      onPressed: viewModel.loginToFirebase,
+                      child: const Text("Login"),
+                    ),
+                    TextButton(
+                      onPressed: () => Get.offAndToNamed(SignUp.routeName),
+                      child: const Text("Sign up"),
+                    ),
+                  ],
+                )
               ],
             ),
           ),

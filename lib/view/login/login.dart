@@ -1,3 +1,3 @@
-export 'login_page.dart';
-export 'login_model.dart';
-export 'login_view_model.dart';
+export 'page.dart';
+export 'model.dart';
+export 'view_model.dart';
